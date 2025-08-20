@@ -7,9 +7,16 @@ sdk: docker
 pinned: false
 app_port: 5700
 ---
+## Host模式
 ```
 docker run -d --name n8n --net host -v /home/node/.n8n:/home/node/.n8n -e RCLONE_FOLDER=onedrive:/n8n -e GENERIC_TIMEZONE=Asia/Shanghai -e TZ=Asia/Shanghai -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true -e WEBHOOK_URL=http://skyler/ -e RCLONE_CONF=*** -e ADMIN_PASSWORD=*** -e N8N_ENCRYPTION_KEY=*** -e N8N_SECURE_COOKIE=false skylerhe/n8n:latest
 ```
+## Bridge模式
+```
+docker run -d --name n8n -p 60305:5700 -p 60306:5678 -p 60307:7860 -v /home/coder/.n8n:/home/coder/.n8n -e RCLONE_FOLDER=onedrive:/n8n -e GENERIC_TIMEZONE=Asia/Shanghai -e TZ=Asia/Shanghai -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true -e WEBHOOK_URL=http://145.239.245.175:60305 -e N8N_ENCRYPTION_KEY=D1543608 -e RCLONE_CONF="$(cat /home/rclone.conf)" -e ADMIN_PASSWORD=D1543608 --user root skylerhe/n8n:latest
+```
+
+
 ## 以Code Serer为核心的用nginx做为反代来部署多个服务
 目前已经添加服务   
 n8n地址:/   
