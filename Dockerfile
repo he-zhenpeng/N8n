@@ -55,6 +55,7 @@ RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
     openssh-client \
     nginx \
     jq \
+    zstd \
     procps \
     netcat \
     sshpass \
