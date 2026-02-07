@@ -39,7 +39,7 @@ ADMIN_PASSWORD:Code Server登陆密码
 
 同步配置目录命令   
 ```
-rclone sync /home/coder/.n8n n8n:/n8n --create-empty-src-dirs
+rclone sync /home/coder/.n8n onedrive:/n8n --create-empty-src-dirs
 ```
 
 ### 以下为参考环境变量
